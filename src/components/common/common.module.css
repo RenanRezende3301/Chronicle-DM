@@ -1,0 +1,448 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.76);
+  backdrop-filter: blur(5px);
+  animation: fade-in 140ms ease-out;
+}
+
+.modalPanel {
+  display: flex;
+  width: min(100%, 760px);
+  max-height: min(82vh, 860px);
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(155, 116, 46, 0.45);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(34, 34, 34, 0.96), rgba(13, 13, 13, 0.98)),
+    var(--color-bg-card);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.62),
+    0 0 32px rgba(139, 0, 0, 0.18);
+}
+
+.modalPanelsmall {
+  width: min(100%, 460px);
+}
+
+.modalPanelmedium {
+  width: min(100%, 760px);
+}
+
+.modalPanellarge {
+  width: min(100%, 1080px);
+}
+
+.modalHeader,
+.modalFooter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-color: rgba(155, 116, 46, 0.28);
+}
+
+.modalHeader {
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(155, 116, 46, 0.28);
+}
+
+.modalHeader h2 {
+  color: var(--color-text-primary);
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modalHeader p {
+  margin-top: 4px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.modalBody {
+  overflow: auto;
+  padding: 18px;
+}
+
+.modalFooter {
+  justify-content: flex-end;
+  border-top: 1px solid rgba(155, 116, 46, 0.28);
+}
+
+.iconButton,
+.toastClose {
+  display: inline-grid;
+  place-items: center;
+  color: var(--color-text-secondary);
+  border: 1px solid rgba(155, 116, 46, 0.34);
+  border-radius: 4px;
+  background: rgba(24, 24, 24, 0.86);
+}
+
+.iconButton {
+  width: 32px;
+  height: 32px;
+}
+
+.iconButton:hover,
+.toastClose:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 18px var(--color-accent-glow);
+}
+
+.primaryButton,
+.secondaryButton,
+.destructiveButton {
+  min-height: 38px;
+  padding: 8px 16px;
+  color: var(--color-text-primary);
+  border-radius: 4px;
+}
+
+.primaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-accent-primary);
+}
+
+.primaryButton:hover {
+  background: var(--color-accent-hover);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-border);
+  background: transparent;
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-accent-primary);
+}
+
+.destructiveButton {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #550000;
+}
+
+.destructiveButton:hover {
+  background: #770000;
+}
+
+.dialogMessage {
+  color: var(--color-text-secondary);
+}
+
+.toastViewport {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 70;
+  display: grid;
+  width: min(360px, calc(100vw - 36px));
+  gap: 10px;
+}
+
+.toast {
+  display: grid;
+  grid-template-columns: 22px 1fr 28px;
+  gap: 10px;
+  align-items: start;
+  padding: 12px;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(155, 116, 46, 0.34);
+  border-left-width: 3px;
+  border-radius: 6px;
+  background: rgba(24, 24, 24, 0.96);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.42);
+  animation: fade-in 140ms ease-out;
+}
+
+.toast strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.toast p {
+  margin-top: 2px;
+  color: var(--color-text-secondary);
+  font-size: 0.84rem;
+}
+
+.toastsuccess {
+  border-left-color: #2f8f4e;
+}
+
+.toasterror {
+  border-left-color: var(--color-accent-hover);
+}
+
+.toastwarning {
+  border-left-color: var(--color-health-impaired);
+}
+
+.toastinfo {
+  border-left-color: var(--color-gold);
+}
+
+.toastClose {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.stepper {
+  display: grid;
+  gap: 6px;
+  color: var(--color-text-secondary);
+  font-size: 0.86rem;
+}
+
+.stepper > span {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.stepperControls {
+  display: grid;
+  width: 128px;
+  grid-template-columns: 32px 1fr 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg-input);
+}
+
+.stepperControls button,
+.stepperControls input {
+  min-width: 0;
+  height: 34px;
+  color: var(--color-text-primary);
+  border: 0;
+  background: transparent;
+}
+
+.stepperControls button {
+  display: grid;
+  place-items: center;
+}
+
+.stepperControls button:hover:not(:disabled) {
+  color: var(--color-accent-hover);
+}
+
+.stepperControls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.stepperControls input {
+  text-align: center;
+  font-family: var(--font-mono);
+  border-inline: 1px solid var(--color-border);
+  outline: 0;
+}
+
+.dotRating {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.dotRating legend {
+  margin-bottom: 6px;
+  color: var(--color-text-primary);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.dotRating div,
+.hungerDots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.dotRating button,
+.hungerDot {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 2px solid var(--color-accent-hover);
+  border-radius: 999px;
+  background: transparent;
+}
+
+.dotRating button:hover:not(:disabled),
+.hungerDot:hover:not(:disabled) {
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.2);
+}
+
+.dotActive {
+  background: var(--color-accent-hover) !important;
+}
+
+.track,
+.hungerTrack {
+  display: grid;
+  gap: 8px;
+}
+
+.trackHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+}
+
+.trackHeader > span {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.statusLabel,
+.hungerAlert {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.statusok {
+  color: var(--color-health-ok);
+}
+
+.statusimpaired {
+  color: var(--color-health-impaired);
+}
+
+.statustorpor,
+.hungerAlert {
+  color: var(--color-hunger-critical);
+}
+
+.damageBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.damageBox {
+  position: relative;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  padding: 0;
+  border: 2px solid var(--color-border);
+  border-radius: 3px;
+  background: transparent;
+}
+
+.trackcompact .damageBox {
+  width: 20px;
+  height: 20px;
+}
+
+.damageBox:hover:not(:disabled) {
+  border-color: var(--color-gold);
+}
+
+.damageBox:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.damagesuperficial {
+  border-color: var(--color-health-superficial);
+}
+
+.damagesuperficial span {
+  position: absolute;
+  width: 2px;
+  height: 135%;
+  background: var(--color-health-superficial);
+  transform: rotate(38deg);
+}
+
+.damageaggravated {
+  border-color: var(--color-health-aggravated);
+  background: var(--color-health-aggravated);
+}
+
+.damageaggravated strong {
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.trackWillpower .damageBox {
+  border-color: color-mix(in srgb, var(--color-willpower) 65%, var(--color-border));
+}
+
+.trackWillpower .damagesuperficial span {
+  background: #4961b8;
+}
+
+.trackWillpower .damageaggravated {
+  background: var(--color-willpower);
+  border-color: #4961b8;
+}
+
+.hungerTrackcompact .hungerDot {
+  width: 14px;
+  height: 14px;
+}
+
+.hungerDot {
+  border-color: var(--color-hunger-mid);
+}
+
+.hungerDotFilled {
+  background: var(--color-hunger-mid);
+}
+
+.hungerCritical .hungerDotFilled {
+  background: var(--color-hunger-critical);
+  border-color: var(--color-hunger-critical);
+  animation: pulse 1s infinite;
+}
+
+@media (max-width: 760px) {
+  .modalOverlay {
+    align-items: end;
+    padding: 10px;
+  }
+
+  .modalPanel,
+  .modalPanelsmall,
+  .modalPanelmedium,
+  .modalPanellarge {
+    width: 100%;
+    max-height: calc(100dvh - 20px);
+    border-radius: 12px;
+  }
+
+  .modalHeader { gap: 10px; padding: 14px; }
+  .modalHeader h2 { font-size: 1rem; overflow-wrap: anywhere; }
+  .modalHeader p { font-size: 0.76rem; overflow-wrap: anywhere; }
+  .modalBody { min-width: 0; padding: 14px; overflow-x: clip; }
+  .modalFooter { flex-wrap: wrap; gap: 8px; padding: 12px 14px calc(12px + env(safe-area-inset-bottom)); }
+  .modalFooter > button { min-width: 0; flex: 1 1 132px; }
+}

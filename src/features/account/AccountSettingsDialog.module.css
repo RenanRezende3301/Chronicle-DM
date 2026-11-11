@@ -1,0 +1,246 @@
+.modal {
+  width: min(760px, calc(100vw - 32px));
+}
+
+.modalBody {
+  display: grid;
+  gap: 16px;
+  max-height: min(74dvh, 760px);
+  overflow-y: auto;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 15px;
+  border: 1px solid rgba(155, 116, 46, 0.28);
+  border-radius: 6px;
+  color: var(--color-gold);
+  background: linear-gradient(110deg, rgba(155, 116, 46, 0.13), rgba(20, 20, 21, 0.7));
+}
+
+.identity > div {
+  display: grid;
+  min-width: 0;
+}
+
+.identity strong {
+  color: var(--color-text-primary);
+  font-size: 0.88rem;
+}
+
+.identity span {
+  overflow: hidden;
+  color: var(--color-text-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.76rem;
+}
+
+.identity small {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+}
+
+.notice {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.noticesuccess {
+  border-color: rgba(67, 141, 85, 0.62);
+  color: #b8e0c0;
+  background: rgba(36, 101, 51, 0.17);
+}
+
+.noticeerror {
+  border-color: rgba(176, 0, 0, 0.72);
+  color: #ffb6b1;
+  background: rgba(139, 0, 0, 0.17);
+}
+
+.noticeinfo {
+  border-color: rgba(155, 116, 46, 0.48);
+  color: #e5d0a3;
+  background: rgba(155, 116, 46, 0.12);
+}
+
+.sections {
+  display: grid;
+  gap: 12px;
+}
+
+.section {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(155, 116, 46, 0.2);
+  border-radius: 6px;
+  background: rgba(14, 14, 15, 0.66);
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--color-gold);
+}
+
+.sectionHeading h3 {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+.sectionHeading p {
+  margin: 3px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field > span {
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+}
+
+.field input {
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  padding: 8px 10px;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  outline: none;
+  background: var(--color-bg-input);
+}
+
+.field input:focus {
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.16);
+}
+
+.passwordInput {
+  position: relative;
+}
+
+.passwordInput input {
+  padding-right: 38px;
+}
+
+.visibilityButton {
+  position: absolute;
+  top: 50%;
+  right: 3px;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  padding: 0;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.visibilityButton:hover {
+  color: var(--color-gold);
+  background: rgba(155, 116, 46, 0.12);
+}
+
+.primaryAction,
+.secondaryAction {
+  justify-self: start;
+  min-height: 35px;
+  padding: 7px 12px;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.primaryAction {
+  color: #f4ddd7;
+  border: 1px solid rgba(176, 0, 0, 0.82);
+  background: linear-gradient(180deg, #9c0808, #670000);
+}
+
+.secondaryAction {
+  color: var(--color-text-primary);
+  border: 1px solid rgba(155, 116, 46, 0.44);
+  background: rgba(155, 116, 46, 0.14);
+}
+
+.primaryAction:hover:not(:disabled) {
+  background: linear-gradient(180deg, #bd1111, #800000);
+}
+
+.secondaryAction:hover:not(:disabled) {
+  border-color: var(--color-gold);
+  background: rgba(155, 116, 46, 0.23);
+}
+
+.primaryAction:disabled,
+.secondaryAction:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
+.securityNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 2px 3px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.securityNote p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .modal {
+    width: min(100%, calc(100vw - 18px));
+  }
+
+  .modalBody {
+    max-height: calc(100dvh - 160px);
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+  }
+
+  .identity small {
+    display: none;
+  }
+
+  .primaryAction,
+  .secondaryAction {
+    width: 100%;
+    justify-self: stretch;
+  }
+}

@@ -1,0 +1,374 @@
+.shell {
+  height: 100dvh;
+  min-width: 1180px;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-gutter: stable;
+  color: var(--color-text-primary);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(139, 0, 0, 0.16), transparent 30rem),
+    #0b0b0c;
+}
+
+.header {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 28px;
+  border-bottom: 1px solid rgba(155, 116, 46, 0.32);
+  background: rgba(10, 10, 11, 0.94);
+}
+
+.brand {
+  display: grid;
+  margin-right: auto;
+}
+
+.brand span {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.brand strong {
+  font-family: var(--font-title);
+  letter-spacing: 0.08em;
+}
+
+.header > button,
+.library header button {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  color: var(--color-text-secondary);
+  border: 1px solid rgba(155, 116, 46, 0.3);
+  border-radius: 4px;
+  background: rgba(24, 24, 24, 0.8);
+}
+
+.header > button:hover,
+.library header button:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-accent-hover);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 12px;
+  color: var(--color-gold);
+}
+
+.account span {
+  display: grid;
+}
+
+.account strong {
+  color: var(--color-text-primary);
+  font-size: 0.76rem;
+}
+
+.account small {
+  color: var(--color-text-muted);
+  font-size: 0.66rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 520px);
+  gap: 60px;
+  padding: 64px max(48px, 8vw) 44px;
+  border-bottom: 1px solid rgba(155, 116, 46, 0.18);
+}
+
+.hero > div:first-child {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+}
+
+.hero > div:first-child > span {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  letter-spacing: 0.04em;
+}
+
+.hero p {
+  max-width: 650px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.createForm {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 20px;
+  border: 1px solid rgba(155, 116, 46, 0.34);
+  border-radius: 6px;
+  background: rgba(25, 25, 26, 0.8);
+}
+
+.createForm label {
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+}
+
+.createForm > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.createForm input {
+  min-height: 42px;
+  padding: 9px 11px;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  outline: 0;
+  background: var(--color-bg-input);
+}
+
+.createForm input:focus {
+  border-color: var(--color-border-focus);
+}
+
+.createForm button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 15px;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(176, 0, 0, 0.72);
+  border-radius: 4px;
+  background: linear-gradient(180deg, #a50000, #6f0000);
+}
+
+.library {
+  display: grid;
+  gap: 18px;
+  padding: 34px max(48px, 8vw) 70px;
+}
+
+.library > header {
+  display: flex;
+  align-items: center;
+}
+
+.library > header > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-right: auto;
+  color: var(--color-gold);
+}
+
+.library h2 {
+  color: var(--color-text-primary);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.library header span {
+  min-width: 25px;
+  padding: 2px 7px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: 99px;
+  font-size: 0.68rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  min-height: 150px;
+  grid-template-columns: 86px 1fr;
+  gap: 16px;
+  padding: 17px;
+  border: 1px solid rgba(155, 116, 46, 0.28);
+  border-radius: 6px;
+  background: linear-gradient(145deg, rgba(34, 34, 35, 0.94), rgba(15, 15, 16, 0.98));
+}
+
+.portrait {
+  display: grid;
+  width: 86px;
+  height: 112px;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(176, 0, 0, 0.65);
+  border-radius: 5px;
+  background: radial-gradient(circle, rgba(139, 0, 0, 0.42), #111 72%);
+  font-family: var(--font-title);
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cardBody {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: 5px;
+  padding-right: 24px;
+}
+
+.cardBody small,
+.cardBody span {
+  color: var(--color-text-muted);
+  font-size: 0.64rem;
+}
+
+.cardBody h3 {
+  overflow: hidden;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardBody p {
+  min-height: 36px;
+  color: var(--color-text-secondary);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.openButton {
+  justify-self: start;
+  margin-top: 5px;
+  padding: 6px 10px;
+  color: #fff;
+  border: 1px solid rgba(176, 0, 0, 0.62);
+  border-radius: 4px;
+  background: rgba(139, 0, 0, 0.2);
+  font-size: 0.68rem;
+}
+
+.openButton:hover {
+  border-color: #b00000;
+  background: rgba(139, 0, 0, 0.38);
+}
+
+.archiveButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: var(--color-text-muted);
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.archiveButton:hover {
+  color: var(--color-text-primary);
+  background: rgba(139, 0, 0, 0.3);
+}
+
+.empty,
+.emptyState,
+.error {
+  padding: 28px;
+  border: 1px dashed var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .shell { min-width: 0; height: auto; min-height: 100dvh; overflow: visible; }
+  .header { min-height: 56px; padding: 8px 12px; }
+  .account { display: none; }
+  .hero { grid-template-columns: 1fr; gap: 22px; padding: 28px 16px; }
+  .hero h1 { font-size: clamp(1.55rem, 8vw, 2.2rem); }
+  .createForm { padding: 15px; }
+  .library { padding: 18px 12px calc(26px + env(safe-area-inset-bottom)); }
+  .library > header { align-items: flex-start; gap: 10px; }
+  .library h2 { font-size: .88rem; }
+  .grid { grid-template-columns: 1fr; gap: 11px; }
+  .card {
+    min-width: 0;
+    min-height: 142px;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background:
+      linear-gradient(120deg, rgba(139,0,0,.14), transparent 54%),
+      linear-gradient(145deg, rgba(34,34,35,.96), rgba(12,12,13,.99));
+  }
+  .portrait { width: 88px; height: 116px; font-size: 1.7rem; }
+  .cardBody { min-width: 0; gap: 4px; padding: 2px 31px 0 0; }
+  .cardBody small, .cardBody span { overflow: hidden; font-size: .66rem; text-overflow: ellipsis; white-space: nowrap; }
+  .cardBody h3 { min-width: 0; max-width: 100%; font-size: 1rem; }
+  .cardBody p {
+    display: -webkit-box;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    color: var(--color-text-secondary);
+    font-size: .72rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .openButton { width: 100%; min-height: 38px; margin-top: auto; padding-inline: 8px; }
+  .archiveButton { top: 8px; right: 8px; width: 38px; height: 38px; }
+}
+
+@media (max-width: 360px) {
+  .card { grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 10px; }
+  .portrait { width: 76px; height: 104px; }
+}
+
+.emptyState {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+}
+
+.emptyState svg {
+  color: var(--color-gold);
+}
+
+.error {
+  color: #f0b2b2;
+  border-color: rgba(176, 0, 0, 0.5);
+  background: rgba(139, 0, 0, 0.14);
+}

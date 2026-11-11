@@ -1,0 +1,411 @@
+.authShell {
+  display: grid;
+  min-width: 1280px;
+  min-height: 100vh;
+  place-items: center;
+  padding: 42px;
+  background:
+    linear-gradient(90deg, rgba(139, 0, 0, 0.16), transparent 28rem),
+    radial-gradient(circle at 50% 20%, rgba(155, 116, 46, 0.08), transparent 32rem),
+    rgba(0, 0, 0, 0.22);
+}
+
+.authPanel {
+  position: relative;
+  display: grid;
+  width: min(460px, 100%);
+  gap: 22px;
+  padding: 28px;
+  border: 1px solid rgba(155, 116, 46, 0.38);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(34, 34, 34, 0.92), rgba(12, 12, 12, 0.98)),
+    radial-gradient(circle at top right, rgba(139, 0, 0, 0.18), transparent 12rem);
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.5),
+    0 0 28px rgba(139, 0, 0, 0.16);
+}
+
+.brandMark {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 4px;
+  height: 72px;
+  background: linear-gradient(
+    180deg,
+    var(--color-accent-hover),
+    var(--color-gold)
+  );
+}
+
+.authHeader {
+  display: grid;
+  gap: 6px;
+}
+
+.authHeader span {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 0.76rem;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+}
+
+.authHeader h1 {
+  color: var(--color-text-primary);
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.authHeader p {
+  color: var(--color-text-secondary);
+}
+
+.modeSwitch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.modeSwitch button,
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  color: var(--color-text-secondary);
+  border: 1px solid rgba(155, 116, 46, 0.3);
+  border-radius: 4px;
+  background: rgba(24, 24, 24, 0.72);
+}
+
+.modeSwitch button:hover,
+.modeActive {
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-accent-hover) !important;
+  background: rgba(139, 0, 0, 0.26) !important;
+}
+
+.authForm {
+  display: grid;
+  gap: 14px;
+}
+
+.authForm label {
+  display: grid;
+  gap: 6px;
+  color: var(--color-text-secondary);
+  font-size: 0.84rem;
+}
+
+.authForm label small,
+.experiencePicker small {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+
+.authForm input {
+  min-height: 40px;
+  padding: 9px 11px;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg-input);
+}
+
+.authForm input:focus {
+  border-color: var(--color-border-focus);
+  outline: 0;
+}
+
+.experiencePicker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+}
+
+.experiencePicker legend {
+  margin-bottom: 7px;
+  color: var(--color-text-secondary);
+  font-size: 0.84rem;
+}
+
+.experiencePicker button {
+  display: grid;
+  min-height: 70px;
+  grid-template-columns: 22px 1fr;
+  gap: 8px;
+  padding: 10px;
+  color: var(--color-text-secondary);
+  text-align: left;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: rgba(24, 24, 24, 0.72);
+}
+
+.experiencePicker button > span {
+  display: grid;
+  gap: 3px;
+}
+
+.experiencePicker button strong {
+  color: var(--color-text-primary);
+  font-size: 0.78rem;
+}
+
+.experienceActive {
+  border-color: var(--color-accent-hover) !important;
+  background: rgba(139, 0, 0, 0.26) !important;
+}
+
+.authError {
+  padding: 10px;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(176, 0, 0, 0.45);
+  border-radius: 4px;
+  background: rgba(139, 0, 0, 0.2);
+}
+
+.authNotice {
+  padding: 10px;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(155, 116, 46, 0.58);
+  border-radius: 4px;
+  background: rgba(155, 116, 46, 0.14);
+}
+
+.submitButton {
+  color: var(--color-text-primary);
+  border-color: rgba(176, 0, 0, 0.68);
+  background: linear-gradient(180deg, #a50000, #6f0000);
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.textButton {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  justify-self: center;
+  gap: 6px;
+  padding: 5px 7px;
+  color: var(--color-gold);
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 0.78rem;
+}
+
+.textButton:hover {
+  color: #d2aa58;
+  background: rgba(155, 116, 46, 0.11);
+}
+
+.recoveryHint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 11px 12px;
+  color: var(--color-text-muted);
+  border-left: 2px solid rgba(155, 116, 46, 0.52);
+  background: rgba(155, 116, 46, 0.07);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.recoverySuccess {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  color: #b8e0c0;
+  border: 1px solid rgba(67, 141, 85, 0.62);
+  border-radius: 6px;
+  background: rgba(36, 101, 51, 0.14);
+}
+
+.recoverySuccess > svg {
+  color: #79c88b;
+}
+
+.recoverySuccess strong {
+  color: var(--color-text-primary);
+}
+
+.recoverySuccess p {
+  margin: 4px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+}
+
+.recoverySuccess .submitButton {
+  width: 100%;
+}
+
+/*
+ * Authentication is a self-contained mobile screen rather than a compressed
+ * desktop card. The form owns vertical scrolling, keeps the important action
+ * in reach, and respects the browser's dynamic viewport/safe areas.
+ */
+@media (max-width: 700px) {
+  .authShell {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 100dvh;
+    padding:
+      max(18px, env(safe-area-inset-top))
+      max(14px, env(safe-area-inset-right))
+      max(24px, env(safe-area-inset-bottom))
+      max(14px, env(safe-area-inset-left));
+    overflow-x: clip;
+    background:
+      radial-gradient(circle at 50% 0, rgba(139, 0, 0, 0.19), transparent 19rem),
+      linear-gradient(180deg, rgba(24, 18, 15, 0.5), transparent 18rem),
+      rgba(0, 0, 0, 0.22);
+  }
+
+  .authPanel {
+    width: min(100%, 520px);
+    min-height: calc(100dvh - max(36px, env(safe-area-inset-top)) - max(42px, env(safe-area-inset-bottom)));
+    margin: 0 auto;
+    gap: 24px;
+    padding: clamp(22px, 6vw, 34px) clamp(18px, 5vw, 30px) 28px;
+    border-color: rgba(155, 116, 46, 0.28);
+    border-radius: 14px;
+    background:
+      linear-gradient(180deg, rgba(31, 30, 29, 0.98), rgba(12, 12, 12, 0.99)),
+      radial-gradient(circle at top right, rgba(139, 0, 0, 0.18), transparent 12rem);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
+  }
+
+  .brandMark {
+    top: 0;
+    left: 22px;
+    width: calc(100% - 44px);
+    height: 3px;
+    border-radius: 0 0 999px 999px;
+  }
+
+  .authHeader {
+    gap: 5px;
+    padding-top: 6px;
+  }
+
+  .authHeader span {
+    font-size: 0.68rem;
+    letter-spacing: 0.29em;
+  }
+
+  .authHeader h1 {
+    margin: 0;
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+    line-height: 1.08;
+  }
+
+  .authHeader p {
+    max-width: 31rem;
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .modeSwitch {
+    gap: 6px;
+    padding: 4px;
+    border: 1px solid rgba(155, 116, 46, 0.23);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .modeSwitch button {
+    min-height: 42px;
+    border-color: transparent;
+    border-radius: 7px;
+    font-size: 0.84rem;
+  }
+
+  .authForm {
+    gap: 16px;
+  }
+
+  .authForm label {
+    gap: 7px;
+    font-size: 0.82rem;
+  }
+
+  .authForm input {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 12px;
+    border-radius: 7px;
+  }
+
+  .experiencePicker {
+    gap: 8px;
+  }
+
+  .experiencePicker legend {
+    margin-bottom: 8px;
+  }
+
+  .experiencePicker button {
+    min-height: 78px;
+    padding: 12px 10px;
+    border-radius: 7px;
+  }
+
+  .experiencePicker button small {
+    line-height: 1.3;
+  }
+
+  .authError,
+  .authNotice {
+    margin: 0;
+    padding: 11px 12px;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .submitButton {
+    min-height: 48px;
+    border-radius: 7px;
+    font-weight: 700;
+  }
+
+  .authForm > button:not(.submitButton) {
+    min-height: 42px;
+    color: var(--color-text-secondary);
+    border: 1px solid rgba(155, 116, 46, 0.25);
+    border-radius: 7px;
+    background: rgba(24, 24, 24, 0.72);
+  }
+}
+
+@media (max-width: 360px) {
+  .authShell {
+    padding-inline: 8px;
+  }
+
+  .authPanel {
+    padding-inline: 16px;
+    border-radius: 10px;
+  }
+
+  .experiencePicker {
+    grid-template-columns: 1fr;
+  }
+
+  .experiencePicker button {
+    min-height: 58px;
+  }
+}

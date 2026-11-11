@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Escudo do Narrador">
+  <rect width="64" height="64" rx="12" fill="#0d0d0d"/>
+  <path d="M32 7c8 11 16 20 16 32 0 10-7 18-16 18s-16-8-16-18C16 27 24 18 32 7Z" fill="#8b0000"/>
+  <path d="M25 37c0 6 3 10 8 12-7 0-12-5-12-12 0-6 4-12 9-19-1 8-5 12-5 19Z" fill="#b00000"/>
+  <path d="M18 39c7 3 21 3 28 0" fill="none" stroke="#9b742e" stroke-width="2" stroke-linecap="round"/>
+</svg>

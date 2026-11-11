@@ -1,0 +1,173 @@
+const noRouse = 'Sem Verificacao de Estimulo'
+const rouse = '1 Verificacao de Estimulo'
+
+export const disciplines = [
+  {
+    id: 'animalism',
+    name: 'Animalismo',
+    clans: ['Gangrel', 'Nosferatu', 'Ravnos', 'Tzimisce'],
+    levels: [
+      [{ name: 'Sentir a Besta', cost: noRouse, effect: 'Ler a Besta interior e estados predatorios.' }],
+      [{ name: 'Sussurros Selvagens', cost: noRouse, effect: 'Comunicar-se com animais e dar comandos simples.' }],
+      [{ name: 'Suculencia Animal', cost: noRouse, effect: 'Animais alimentam melhor a Fome do vampiro.' }],
+      [{ name: 'Controlar Animal', cost: rouse, effect: 'Assumir controle direto de uma criatura.' }],
+      [{ name: 'Expulsar a Besta', cost: rouse, effect: 'Projetar Frenesi ou compulsoes em outro alvo.' }],
+    ],
+  },
+  {
+    id: 'auspex',
+    name: 'Auspicios',
+    clans: ['Hecata', 'Malkaviano', 'Salubri', 'Toreador', 'Tremere'],
+    levels: [
+      [{ name: 'Sentidos Intensificados', cost: noRouse, effect: 'Ampliar sentidos e perceber detalhes sutis.' }],
+      [{ name: 'Premonicao', cost: noRouse, effect: 'Receber lampejos intuitivos sobre perigo ou pistas.' }],
+      [{ name: 'Toque do Espirito', cost: rouse, effect: 'Ler impressoes psiquicas deixadas em objetos.' }],
+      [{ name: 'Telepatia', cost: rouse, effect: 'Ler ou projetar pensamentos superficiais.' }],
+      [{ name: 'Clarividencia', cost: rouse, effect: 'Observar lugares distantes ligados ao vampiro.' }],
+    ],
+  },
+  {
+    id: 'blood-sorcery',
+    name: 'Feiticaria de Sangue',
+    clans: ['Banu Haqim', 'Tremere'],
+    levels: [
+      [{ name: 'Gosto por Sangue', cost: noRouse, effect: 'Analisar propriedades basicas do sangue.' }],
+      [{ name: 'Extinguir Vitae', cost: rouse, effect: 'Enfraquecer o sangue de outro vampiro.' }],
+      [{ name: 'Sangue Potente', cost: rouse, effect: 'Aumentar temporariamente a potencia do proprio sangue.' }],
+      [{ name: 'Roubo de Vitae', cost: rouse, effect: 'Extrair sangue a distancia de um alvo.' }],
+      [{ name: 'Caldeirao de Sangue', cost: rouse, effect: 'Ferver o sangue da vitima de dentro para fora.' }],
+    ],
+  },
+  {
+    id: 'celerity',
+    name: 'Celeridade',
+    clans: ['Banu Haqim', 'Brujah', 'Toreador'],
+    levels: [
+      [{ name: 'Graca Felina', cost: noRouse, effect: 'Equilibrio e movimentos precisos em situacoes fisicas.' }],
+      [{ name: 'Rapidez', cost: rouse, effect: 'Movimentos explosivos e deslocamento veloz.' }],
+      [{ name: 'Piscar', cost: rouse, effect: 'Aproximar-se ou escapar em velocidade sobrenatural.' }],
+      [{ name: 'Rajada', cost: rouse, effect: 'Executar uma acao fisica em velocidade extrema.' }],
+      [{ name: 'Golpe Relampago', cost: rouse, effect: 'Atacar antes que o alvo consiga reagir.' }],
+    ],
+  },
+  {
+    id: 'dominate',
+    name: 'Dominacao',
+    clans: ['Lasombra', 'Tremere', 'Ventrue'],
+    levels: [
+      [{ name: 'Nublar Memoria', cost: noRouse, effect: 'Apagar ou turvar memorias recentes.' }],
+      [{ name: 'Hipnotizar', cost: noRouse, effect: 'Dar uma ordem simples por contato visual.' }],
+      [{ name: 'Mente Esquecida', cost: rouse, effect: 'Reescrever memorias de maneira mais profunda.' }],
+      [{ name: 'Racionalizacao', cost: noRouse, effect: 'Fazer a vitima justificar comandos recebidos.' }],
+      [{ name: 'Decreto Terminal', cost: noRouse, effect: 'Permitir ordens que causem dano grave ao alvo.' }],
+    ],
+  },
+  {
+    id: 'fortitude',
+    name: 'Fortaleza',
+    clans: ['Gangrel', 'Hecata', 'Salubri', 'Ventrue'],
+    levels: [
+      [{ name: 'Resiliencia', cost: noRouse, effect: 'Aumentar a trilha de Saude.' }],
+      [{ name: 'Mente Inabalavel', cost: noRouse, effect: 'Resistir melhor a influencia mental e social.' }],
+      [{ name: 'Desafiar Ruina', cost: rouse, effect: 'Reduzir dano antes que ele se torne decisivo.' }],
+      [{ name: 'Carne de Marmore', cost: rouse, effect: 'Ignorar parte de ataques fisicos comuns.' }],
+      [{ name: 'Prowess from Pain', cost: rouse, effect: 'Converter sofrimento em poder fisico temporario.' }],
+    ],
+  },
+  {
+    id: 'obfuscate',
+    name: 'Ofuscacao',
+    clans: ['Banu Haqim', 'Malkaviano', 'Nosferatu'],
+    levels: [
+      [{ name: 'Manto de Sombras', cost: noRouse, effect: 'Ocultar-se enquanto permanece quieto e discreto.' }],
+      [{ name: 'Passagem Invisivel', cost: noRouse, effect: 'Mover-se sem ser notado por observadores comuns.' }],
+      [{ name: 'Mascara das Mil Faces', cost: noRouse, effect: 'Alterar a percepcao social da propria aparencia.' }],
+      [{ name: 'Desaparecer', cost: rouse, effect: 'Sumir da percepcao mesmo sob observacao.' }],
+      [{ name: 'Encobrir Grupo', cost: rouse, effect: 'Estender a ocultacao a aliados proximos.' }],
+    ],
+  },
+  {
+    id: 'potence',
+    name: 'Potencia',
+    clans: ['Brujah', 'Lasombra', 'Nosferatu'],
+    levels: [
+      [{ name: 'Corpo Letal', cost: noRouse, effect: 'Tornar ataques desarmados perigosos contra mortais.' }],
+      [{ name: 'Proeza', cost: rouse, effect: 'Aumentar forca em feitos fisicos e ataques.' }],
+      [{ name: 'Brutalidade', cost: noRouse, effect: 'Melhorar dano em ataques de Briga.' }],
+      [{ name: 'Salto Assombroso', cost: noRouse, effect: 'Saltar distancias sobrenaturais.' }],
+      [{ name: 'Punho de Caim', cost: rouse, effect: 'Causar dano agravado com ataques desarmados.' }],
+    ],
+  },
+  {
+    id: 'presence',
+    name: 'Presenca',
+    clans: ['Brujah', 'Ministerio', 'Toreador', 'Ventrue'],
+    levels: [
+      [{ name: 'Fascinio', cost: noRouse, effect: 'Atrair atencao e simpatia ao redor.' }],
+      [{ name: 'Beijo Persistente', cost: noRouse, effect: 'Tornar o Beijo viciante para a vitima.' }],
+      [{ name: 'Olhar Aterrorizante', cost: rouse, effect: 'Instilar medo direto em um alvo.' }],
+      [{ name: 'Convocacao', cost: rouse, effect: 'Chamar uma pessoa conhecida ate voce.' }],
+      [{ name: 'Majestade', cost: rouse, effect: 'Projetar autoridade sobrenatural quase incontestavel.' }],
+    ],
+  },
+  {
+    id: 'protean',
+    name: 'Proteismo',
+    clans: ['Gangrel', 'Ministerio', 'Tzimisce'],
+    levels: [
+      [{ name: 'Olhos da Besta', cost: noRouse, effect: 'Enxergar claramente no escuro.' }],
+      [{ name: 'Armas Ferais', cost: rouse, effect: 'Criar garras ou presas capazes de ferir gravemente.' }],
+      [{ name: 'Metamorfose', cost: rouse, effect: 'Assumir uma forma animal definida.' }],
+      [{ name: 'Forma Horrenda', cost: rouse, effect: 'Transformar o corpo em uma figura monstruosa.' }],
+      [{ name: 'Forma de Nevoa', cost: rouse, effect: 'Virar nevoa e atravessar pequenas aberturas.' }],
+    ],
+  },
+  {
+    id: 'oblivion',
+    name: 'Oblivion',
+    clans: ['Hecata', 'Lasombra'],
+    levels: [
+      [{ name: 'Visao das Sombras', cost: noRouse, effect: 'Perceber atraves de trevas e sinais da morte.' }],
+      [{ name: 'Bracos de Ahriman', cost: rouse, effect: 'Manifestar tentaculos de sombra para agarrar.' }],
+      [{ name: 'Aura de Decadencia', cost: rouse, effect: 'Acelerar deterioracao e enfraquecer vida ao redor.' }],
+      [{ name: 'Passagem Tenebrosa', cost: rouse, effect: 'Mover-se por sombras sobrenaturais.' }],
+      [{ name: 'Avatar Tenebroso', cost: rouse, effect: 'Fundir-se a trevas como uma forma predatoria.' }],
+    ],
+  },
+  {
+    id: 'thin-blood-alchemy',
+    name: 'Alquimia Thin-Blood',
+    clans: ['Sangue Ralo'],
+    levels: [
+      [{ name: 'Formula Fraca', cost: 'Variavel', effect: 'Preparar efeitos alquimicos simples.' }],
+      [{ name: 'Destilacao Portatil', cost: 'Variavel', effect: 'Carregar misturas para uso posterior.' }],
+      [{ name: 'Formula Avancada', cost: 'Variavel', effect: 'Imitar disciplinas em nivel intermediario.' }],
+      [{ name: 'Mistura Instavel', cost: 'Variavel', effect: 'Produzir efeitos fortes com risco narrativo.' }],
+      [{ name: 'Obra Rara', cost: 'Variavel', effect: 'Imitar poderes superiores de forma limitada.' }],
+    ],
+  },
+  {
+    id: 'serpentis',
+    name: 'Serpentis',
+    clans: ['Ministerio'],
+    levels: [
+      [{ name: 'Olhos da Serpente', cost: noRouse, effect: 'Paralisar ou fascinar pelo olhar.' }],
+      [{ name: 'Lingua da Vibora', cost: rouse, effect: 'Alongar a lingua para sondar ou ferir.' }],
+      [{ name: 'Pele da Vibora', cost: rouse, effect: 'Assumir traços serpentinos defensivos.' }],
+      [{ name: 'Forma da Cobra', cost: rouse, effect: 'Transformar-se em serpente.' }],
+      [{ name: 'Coracao das Trevas', cost: rouse, effect: 'Ocultar ou remover simbolicamente o proprio coracao.' }],
+    ],
+  },
+  {
+    id: 'vicissitude',
+    name: 'Vicissitude',
+    clans: ['Tzimisce'],
+    levels: [
+      [{ name: 'Moldar o Corpo', cost: rouse, effect: 'Alterar carne propria ou de outro alvo contido.' }],
+      [{ name: 'Armas Corporais', cost: rouse, effect: 'Criar garras, espinhos ou placas organicas.' }],
+      [{ name: 'Carne Maleavel', cost: rouse, effect: 'Reorganizar anatomia para resistencia ou horror.' }],
+      [{ name: 'Forma Zulo', cost: rouse, effect: 'Assumir forma monstruosa de guerra.' }],
+      [{ name: 'Corpo Impessoal', cost: rouse, effect: 'Transformar-se em massa maleavel e quase amorfa.' }],
+    ],
+  },
+]

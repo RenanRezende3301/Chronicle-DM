@@ -1,0 +1,367 @@
+.module {
+  display: grid;
+  min-height: 100%;
+  grid-template-columns: 300px minmax(0, 1fr);
+}
+
+.noteList {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 14px;
+  min-height: 0;
+  padding: 22px 16px;
+  border-right: 1px solid rgba(155, 116, 46, 0.24);
+  background: rgba(16, 16, 16, 0.58);
+}
+
+.sidebarHeader {
+  display: grid;
+  gap: 14px;
+}
+
+.sidebarHeader span {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 0.74rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.sidebarHeader button,
+.emptyEditor button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 12px;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  background: var(--color-accent-primary);
+}
+
+.sidebarHeader button:hover,
+.emptyEditor button:hover {
+  background: var(--color-accent-hover);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 10px;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg-input);
+}
+
+.searchBox input {
+  width: 100%;
+  color: var(--color-text-primary);
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.notes {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.notes button {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 11px 12px;
+  color: var(--color-text-secondary);
+  text-align: left;
+  border: 1px solid rgba(155, 116, 46, 0.18);
+  border-radius: 6px;
+  background: rgba(24, 24, 24, 0.58);
+}
+
+.notes button:hover,
+.noteActive {
+  color: var(--color-text-primary) !important;
+  border-color: rgba(139, 0, 0, 0.78) !important;
+  background: rgba(139, 0, 0, 0.16) !important;
+}
+
+.notes strong {
+  overflow: hidden;
+  color: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notes small,
+.emptyList {
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+}
+
+@media (max-width: 760px) {
+  .module { grid-template-columns: 1fr; min-height: 100dvh; }
+  .noteList { grid-template-rows: auto auto auto; padding: 14px 12px; border-right: 0; border-bottom: 1px solid rgba(155,116,46,.24); }
+  .notes { display: flex; max-height: 118px; overflow-x: auto; overflow-y: hidden; }
+  .notes button { min-width: 190px; min-height: 72px; }
+  .editor { padding: 24px 14px calc(28px + env(safe-area-inset-bottom)); }
+  .editorHeader { align-items: stretch; flex-direction: column; }
+}
+
+.emptyList {
+  padding: 18px 8px;
+  text-align: center;
+}
+
+.editor {
+  min-width: 0;
+  padding: 42px 52px;
+}
+
+.editorHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 0.76rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+}
+
+.editor h1 {
+  margin-top: 10px;
+  color: var(--color-text-primary);
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  letter-spacing: 0;
+}
+
+.saveState {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-right: 16px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.editorSurface {
+  display: grid;
+  grid-template-rows: auto auto minmax(360px, 1fr);
+  overflow: hidden;
+  border: 1px solid rgba(155, 116, 46, 0.28);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(24, 24, 24, 0.82), rgba(13, 13, 13, 0.96)),
+    radial-gradient(circle at top right, rgba(139, 0, 0, 0.12), transparent 18rem);
+}
+
+.titleRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  border-bottom: 1px solid rgba(155, 116, 46, 0.22);
+}
+
+.titleInput {
+  width: 100%;
+  min-height: 58px;
+  padding: 14px 16px;
+  color: var(--color-text-primary);
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+}
+
+.formatToolbar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(155, 116, 46, 0.22);
+}
+
+.formatToolbar button {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: rgba(24, 24, 24, 0.76);
+}
+
+.formatToolbar button:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.deleteButton {
+  margin-left: auto;
+}
+
+.editorSurface textarea {
+  width: 100%;
+  min-height: 420px;
+  padding: 16px;
+  color: var(--color-text-primary);
+  border: 0;
+  outline: 0;
+  resize: vertical;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.emptyEditor {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  color: var(--color-text-secondary);
+  border: 1px dashed rgba(155, 116, 46, 0.3);
+  border-radius: 8px;
+  background: rgba(24, 24, 24, 0.42);
+}
+
+.emptyEditor h2 {
+  color: var(--color-text-primary);
+  font-family: var(--font-title);
+  letter-spacing: 0.08em;
+}
+
+/* Declarado após a base desktop para que o respiro da interface móvel não seja
+   sobrescrito pelas regras gerais do editor. */
+@media (max-width: 760px) {
+  .module {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 100dvh;
+  }
+
+  .noteList {
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+    padding: 16px 14px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(155, 116, 46, 0.24);
+  }
+
+  .sidebarHeader { gap: 10px; }
+
+  .notes {
+    display: grid;
+    grid-auto-columns: minmax(208px, 72vw);
+    grid-auto-flow: column;
+    align-items: stretch;
+    gap: 10px;
+    max-height: 122px;
+    padding: 2px 2px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+  }
+
+  .notes button {
+    min-width: 0;
+    min-height: 82px;
+    padding: 14px;
+    scroll-snap-align: start;
+  }
+
+  .notes strong,
+  .notes small {
+    min-width: 0;
+    padding: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .editor {
+    min-width: 0;
+    padding: 24px 16px calc(34px + env(safe-area-inset-bottom));
+  }
+
+  .editorHeader {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .editor h1 {
+    margin-top: 6px;
+    font-size: clamp(1.62rem, 8vw, 2.12rem);
+    line-height: 1.12;
+  }
+
+  .editorSurface {
+    min-width: 0;
+    grid-template-rows: auto auto minmax(400px, 1fr);
+    border-radius: 10px;
+  }
+
+  .titleRow { min-width: 0; }
+
+  .titleInput {
+    min-width: 0;
+    min-height: 60px;
+    padding: 16px;
+    font-size: 1.12rem;
+    line-height: 1.25;
+  }
+
+  .saveState {
+    flex: 0 0 auto;
+    padding: 0 14px 0 8px;
+    font-size: 0.65rem;
+  }
+
+  .formatToolbar {
+    gap: 9px;
+    padding: 11px 14px;
+  }
+
+  .formatToolbar button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .editorSurface textarea {
+    min-width: 0;
+    min-height: 440px;
+    padding: 18px 16px 28px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .emptyEditor {
+    min-height: 320px;
+    padding: 28px 18px;
+    text-align: center;
+  }
+
+  .emptyEditor h2 {
+    width: 100%;
+    text-align: center;
+  }
+}
